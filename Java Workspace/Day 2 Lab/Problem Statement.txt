@@ -1,0 +1,73 @@
+1. Revise class work
+2. Complete pending assignments.
+3. Solve Tank assignment along with memory picture.
+
+class Tank {
+  private int level;
+  Tank(int l)
+   {
+     level=l;
+   }
+  public void setLevel(int level1)
+  {
+    level=level1;
+  }
+  public int getLevel()
+  {
+    return level;
+  }
+}	
+
+public class Assignment {
+  public static void main(String[] args) {
+    Tank t1 = new Tank(10);
+    Tank t2 = new Tank(20);
+   //How many objects marked for GC ?
+    s.o.p("1: t1.level: " + t1.getLevel() +
+          ", t2.level: " + t2.getLevel());
+    t1 = t2;
+    s.o.p("2: t1.level: " + t1.getLevel() +
+          ", t2.level: " + t2.getLevel());
+    t1.setLevel(27);
+     s.o.p("3: t1.level: " + t1.getLevel() +
+          ", t2.level: " + t2.getLevel());
+    t2.setLevel(t1.getLevel()+10);
+     s.o.p("4: t1.level: " + t1.getLevel() +
+          ", t2.level: " + t2.getLevel());
+  }
+}
+4. Create a java applicstion for the following.
+ Create a Customer class , with data members (all private : tight encapsulation)
+name(String),email(String),age(int), creditLimit(double)
+
+4.1 Supply a parameterized constructor to accept all details from user
+Customer(.....)
+{...}
+4.2 Supply an argument less  constructor to init default name to "Riya" , email to "riya@gmail.com",age=25,creditLimit=10000
+Customer()
+{
+ // this("Riya" ,"riya@gmail.com",25,10000);//call same cls's MATCHING constr
+ this("Riya" ,"riya@gmail.com",25);//4.3 
+}
+4.3 Supply another constructor , to init default creditLimit to 10000, taking rest of the i/ps from user.
+Customer(String name,String email,int age)
+{
+   this(name,email,age,10000);//4.1
+}
+4.4 Write a method , getDetails to return String form of customer name & credit limit details.
+4.5 Supply getter & setter for creditLimit.
+Norms : public void setCreditLimit(double limit) {...}
+public double getCreditLimit(){...}
+
+Note : Currently constructor chaining is not discussed. But can be discussed in the lab & make use of it then.
+Hint : Customer(String name,String email,int age,double limit) {....}
+Customer()
+{
+ this(......);//constr chaining : invokes earlier MATCHING constr of the same class.
+}
+
+4.6 Create a TestCustomer class . Use scanner to accept user i/ps.
+Create 3 customers using 3 different constructors(4.1 : c1 ,4.2 : c2,4.3 :c3 )
+Display customer details of all customers.
+Prompt user , for changing creditLimit of the c3.
+Display new credit limit on the console.
