@@ -1,0 +1,49 @@
+package tester;
+import java.util.*;
+
+import com.cdac.core.Student;
+
+public class TestStudent {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Enter the number of students");
+		Scanner sc=new Scanner(System.in);
+		int numberOfStudents=sc.nextInt();
+		Student[] class1= new Student[numberOfStudents];
+		System.out.println("Enter the option : \n1.Admit New Student\n2.Assign Scores\n3.Display details of topper\n4.Exit");
+		int option=sc.nextInt();
+		int k=1;
+		while(option!=4)
+		{
+			switch(option)
+			{
+			case 1:
+				if(k>=numberOfStudents)
+				{
+					System.out.println("Class is full");
+					break;
+				}
+				else
+				{
+				String name=sc.nextLine();
+				String email=sc.nextLine();
+				int age=sc.nextInt();
+				class1[k]=new Student(name,email,age);
+				k++;
+				
+				break;
+				}
+			case 2:
+				
+				break;
+			case 3:
+				break;
+				
+			}
+			option=sc.nextInt();
+		}
+		
+	}
+
+}

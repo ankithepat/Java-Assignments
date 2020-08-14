@@ -1,0 +1,28 @@
+package com.cdac.core;
+
+public class Student {
+	private static int id;
+	private String name;
+	private String email;
+	private int age;
+	private double gpa
+	
+	public Student(String nameByUser,String emailByUser,int ageByUser)
+	{
+		this.id=++(this.id);
+		name=nameByUser;
+		email=emailByUser;
+		age=ageByUser;
+		
+	}
+	public String fetchDetails()
+	{
+		return "ID -"+id+"Name : "+name+" Email : "+email+" Age : "+age;
+	}
+	public double computeGPA(double scoreQuiz,double scoreTest,double scoreAssignments)
+	{
+		this.gpa=((20/100)*scoreQuiz) + ((50/100)*scoreTest) + ((30/100)*scoreAssignments)
+		return gpa;
+	}
+
+}

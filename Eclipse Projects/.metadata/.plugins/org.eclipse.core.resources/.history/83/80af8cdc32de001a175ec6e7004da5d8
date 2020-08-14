@@ -1,0 +1,33 @@
+package com.app.tester;
+import com.app.geometry.Point2D;
+import java.util.Scanner;
+
+class TestPoints
+{
+	public static void main(String[] args)
+	{
+		
+		System.out.println("Enter the two coordinates of the First Point");
+		Scanner sc=new Scanner(System.in);
+		Point2D p1=new Point2D(sc.nextDouble(),sc.nextDouble());
+		System.out.println("Enter the two coordinates of the Second Point");
+		Point2D p2=new Point2D(sc.nextDouble(),sc.nextDouble());
+		System.out.println("Showing Coordinates of first point\n" + p1.getDetails());
+			
+		System.out.println("\nShowing Coordinates of second point\n" + p2.getDetails());
+		
+		System.out.println("\nChecking if the points are equal : " + p1.isEqual(p2)+"\n");
+		System.out.println("Enter the offsets with respect to Point p1 (x and y coordinate respectively) : \n");
+		Point2D p3=p1.createNewPoint(sc.nextDouble(),sc.nextDouble());
+		System.out.println("\nShowing Coordinates of third point\n" + p3.getDetails());
+		System.out.println("\nShowing the difference between the points p1 and p2 : " + p1.calculateDistance(p2));
+		sc.close();
+		
+
+
+		
+		
+			
+	}
+		
+}

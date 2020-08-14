@@ -1,0 +1,46 @@
+package com.app.tester;
+
+import com.app.geometry.Point2D;
+import java.util.Scanner;
+
+class TestPoints {
+	public static void main(String[] args) {
+
+		System.out.println("Enter the number of points to be plotted : ");
+		Scanner sc = new Scanner(System.in);
+		Point2D[] p = new Point2D[sc.nextInt()];
+		System.out.println("Enter the option (10 to exit)  : ");
+
+		int option = sc.nextInt();
+		while (option != 10) {
+			switch (option) {
+			case 1:
+				System.out.println("Enter the Index,X and Y Coordinates : ");
+				int index = sc.nextInt();
+				p[index] = new Point2D(sc.nextDouble(), sc.nextDouble());
+				System.out.println("Showing Coordinates of " + index + "th index point\n" + p[index].getDetails());
+				break;
+			case 2:
+				for(Point2D point : p )
+				{
+					System.out.println("Printing all the details of points plotted so far : "+point.getDetails());
+				}
+				break;
+			case 3:
+				System.out.println("Enter the indexes of the points whose differences is to be found : ");
+				System.out.println("The difference between the points : "+p[sc.nextInt()].calculateDistance(p[sc.nextInt()]));
+				break;
+				/*	case 10:
+				System.out.println("Exiting");
+				return;*/
+				
+			}
+			option = sc.nextInt();
+
+			}
+			
+		}
+		sc.close();
+
+	}
+
