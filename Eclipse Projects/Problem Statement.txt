@@ -1,6 +1,141 @@
+Day 1
+
+1. 
+Accept  i/ps from User , till user enters "quit" or any other option.
+I/P : operation(add|sub|mult|div) , number1(double) , number2(double) 
+Display the result of the operation.
+
+2. Accept 2 double values from User (using Scanner). Check data type.
+. If arguments are not doubles , supply suitable error message & terminate.
+If numbers are double values , print its average.
+
+3. Display food menu to user. Assign fixed prices to food items.
+User will select items from menu along with the quantity. (eg 1. Dosa 2. Samosa 3. Rice 4. Noodles .......10 . Generate Bill ) When user enters 'Generate Bill' option, display total bill & exit.
+
+Day 2 
+1. Revise class work
+2. Complete pending assignments.
+3. Solve Tank assignment along with memory picture.
+
+class Tank {
+  private int level;
+  Tank(int l)
+   {
+     level=l;
+   }
+  public void setLevel(int level1)
+  {
+    level=level1;
+  }
+  public int getLevel()
+  {
+    return level;
+  }
+}	
+
+public class Assignment {
+  public static void main(String[] args) {
+    Tank t1 = new Tank(10);
+    Tank t2 = new Tank(20);
+   //How many objects marked for GC ?
+    s.o.p("1: t1.level: " + t1.getLevel() +
+          ", t2.level: " + t2.getLevel());
+    t1 = t2;
+    s.o.p("2: t1.level: " + t1.getLevel() +
+          ", t2.level: " + t2.getLevel());
+    t1.setLevel(27);
+     s.o.p("3: t1.level: " + t1.getLevel() +
+          ", t2.level: " + t2.getLevel());
+    t2.setLevel(t1.getLevel()+10);
+     s.o.p("4: t1.level: " + t1.getLevel() +
+          ", t2.level: " + t2.getLevel());
+  }
+}
+4. Create a java applicstion for the following.
+ Create a Customer class , with data members (all private : tight encapsulation)
+name(String),email(String),age(int), creditLimit(double)
+
+4.1 Supply a parameterized constructor to accept all details from user
+Customer(.....)
+{...}
+4.2 Supply an argument less  constructor to init default name to "Riya" , email to "riya@gmail.com",age=25,creditLimit=10000
+Customer()
+{
+ // this("Riya" ,"riya@gmail.com",25,10000);//call same cls's MATCHING constr
+ this("Riya" ,"riya@gmail.com",25);//4.3 
+}
+4.3 Supply another constructor , to init default creditLimit to 10000, taking rest of the i/ps from user.
+Customer(String name,String email,int age)
+{
+   this(name,email,age,10000);//4.1
+}
+4.4 Write a method , getDetails to return String form of customer name & credit limit details.
+4.5 Supply getter & setter for creditLimit.
+Norms : public void setCreditLimit(double limit) {...}
+public double getCreditLimit(){...}
+
+Note : Currently constructor chaining is not discussed. But can be discussed in the lab & make use of it then.
+Hint : Customer(String name,String email,int age,double limit) {....}
+Customer()
+{
+ this(......);//constr chaining : invokes earlier MATCHING constr of the same class.
+}
+
+4.6 Create a TestCustomer class . Use scanner to accept user i/ps.
+Create 3 customers using 3 different constructors(4.1 : c1 ,4.2 : c2,4.3 :c3 )
+Display customer details of all customers.
+Prompt user , for changing creditLimit of the c3.
+Display new credit limit on the console.
+
+Day 3
+1. Revise the classwork.
+ 
+2. Solve code samples from <day3-data\params_passing>
+Testers 1,2,3 
+This is to understand parameter passing in java.
+
+3. Create Point class Point2D , under package com.app.geometry   : for representing a point in x-y co-ordinate system.
+eg : day3_lab \src 
+com \ app \geometry --- Point2D.java
+package com.app.geometry;
+
+3.1 Create a parameterized constructor to accept x & y co-ords.
+
+3.2 Add public String getDetails()) --to return string form point's x & y co-ords
+
+3.3 Add isEqual method to Point2D class : boolean returning method : must ret. true if both points are having same x,y co-ords or false otherwise. 
+eg : boolean isEqual(Point2D anotherPoint){....}
+
+3.4 Add a method to Point2D class -- to create and return new point having given x & y offset.
+eg : Point2D p1=new Point2D(10,20);
+Point2d p3=p1.createNewPoint(5,-2);//p3 : 15,18
+If user supplies offset of (5, -2) : your method should return a new point object placed at (15,18)
+eg : Point2D createNewPoint(int xOff,iny yOff){...}
+
+3.5 Add calculateDistance method to calculate distance between current point & specified point & return the distance to the caller.
+(eg double  calcDistance(Point2D p2))
+Hint : Use distance formula . Use java.lang.Math class methods --sqrt, pow etc.
+
+1.5 Write TestPoint class , under "com.app.tester" package with a main method
+Accept co ordinates of 2 points from user (Scanner) --p1 & p2
+
+1.6 Use getDetails method to display point details.(p1's details & p2's details)
+
+1.7 Invoke isEqual & display if points are same or different (i.e p1 & p2 are located at the same position)
+
+1.8 Create new point p3 , with the dimensions offset from p1.
+I/P --x offset & y offset
+
+1.8 Display distance between 2 points.(between p1 & p2)
+
+4. Optional assignment (solve if you want!)
+Refer to TestParameterPassing3's swap method.
+Think of any way to get the swapped o/p (i.e sal after swap should be : 2000 1000)
+
+Day 4
 0. Revise class work
 Replace for loop by for each in TestBoxArrays.java .
-What will happen (observe n conclude) 		Null Pointer Exception
+What will happen (observe n conclude)
 
 1. Create a new eclipse project day4_lab
 Copy earlier created Point2D class in com.app.geometry package.
@@ -8,6 +143,7 @@ Create a new TestPoints class in "com.app.tester" package for the following.
 
 1.1 Prompt user , how many points to plot?
 Create suitable array , to store Point2D type of references.
+eg : Point2d[] points=new .....
 
 1.2 Add a menu , Run the application till user chooses option 10 (exit)
 
@@ -16,6 +152,7 @@ I/P --index , x & y
 eg : If user supplies 5 50 100
 Create a Point2D with x, y of (50,100) & its reference should be stored at the 5th index position in array.
 
+
 2 Display all points plotted so far. (Use for-each)
 
 
@@ -23,6 +160,7 @@ Create a Point2D with x, y of (50,100) & its reference should be stored at the 5
 I/P strt , end point indexes.
 eg : If user enters 2 6
 Find out the distance between 2nd & 6th point. (array indexes start from 0)
+eg : points[strtIndex].calcDistance(points[endIndex]);
 
 
 10. Exit
@@ -36,10 +174,13 @@ Optional holiday assignment(Don't feel pressured ! But if u get time ,  do solve
 2. Create java application for the following.
 Create Student class  in package com.cdac.core
 
-2.1 Every student must have   --- id(int) --if possible system generated(Hint : use static data member id counter : start with 1 n generate ids.), name (String), email(String), age(int),gpa
+2.1 Every student must have   --- id(int) --if possible system generated(Hint : use static data member id counter : start with 1 n generate ids.), name (String), email(String), age(int),gpa(double)
 
 2.2 Add suitable parameterized constructor.
 Accept -- name,email,age only from user.
+eg : public static int idCounter=1;
+constr : 
+this.id=idCounter++;
 
 2.3 Add a method fetchDetails to  fetch student details
 (ret type -- String)
@@ -48,6 +189,10 @@ Accept -- name,email,age only from user.
 Accept 3 method arguments for : scores for quiz , test & assignments
 gpa should be computed on 20 % of quiz score, 50% of test score & 30% of assignment score.
 (1-10 scale)
+eg : public void computeGPA (....)
+{
+ this.gpa=.....;
+}
 
 
 2.5 Write a TestStudent class in tester package
@@ -67,3 +212,102 @@ In case of failure : invalid student id.
 3. Display details of topper
 
 4. Exit
+
+Day 5
+Reading work
+
+1. Go through "readme inheritance_polymorphism.txt" from day5_help.
+(at least till the topics covered today)
+
+Go through "regarding private members n inheritance.txt" 
+It's a popular interview question.
+
+2. Go through all code samples & memory diagrams.
+
+3. Solve this.
+Fresh business scenario to apply inheritance , polymorphism   to emp based organization scenario.
+
+Create Emp based organization structure --- Emp , Mgr , Worker
+All of above classes must be in --com.app.org
+
+3.1 Emp state--- id(int), name, deptId , basic(double)
+Accept all of above in constructor arguments.
+Behaviour ---1.  get emp details -- override toString.
+2. compute net salary ---ret 0
+(eg : public double computeNetSalary(){return 0;})
+
+3.2 Mgr state  ---id,name,basic,deptId , perfBonus
+Behaviour ----1. get mgr details :  override toString. 
+2. compute net salary (formula: basic+perfBonus) -- override computeNetSalary
+3. get performance bonus. --add a new method to return bonus.(getter)
+
+
+3.3 Worker state  --id,name,basic,deptId,hoursWorked,hourlyRate
+Behaviour--- 
+1. get worker details -- :  override toString.
+2.  compute net salary (formula:  = basic+(hoursWorked*hourlyRate) --override computeNetSalary
+3. get hrlyRate of the worker  -- add a new method to return hourly rate of a worker.(getter)
+
+Organize classes in inheritance  hierarchy.
+
+Write TestOrganization in "tester" package.
+Create suitable array to store organization details.
+Provide following options
+
+1. Hire Manager
+2. Hire Worker  
+3. Display information of all employees including net salary , display bonus if its' manager or display hourly rate of a worker  using single for-each loop.
+org : {m1,m2,w1,w2,w3}
+for(Emp e : org) {
+ sop(e+" net salary "+e.computeNetSalary());
+ sop(((Mgr)e).getPerfBonus()); //for 3,4,5 : classcast exc : 
+}
+
+
+10 Exit
+
+
+Day 6
+1. Revise up casting , downcasting , instanceof , abstract keyword , final keyword n static keyword , with our readmes n code samples.
+
+2. Solve (what will happen ?) (with Lab Faculty's help if necessary!)
+2.1 day6_data\day6_help\ready code\method overloading : examples
+2.2 day6_data\day6_help\ready code\  ---  test_override related examples
+2.3 day6_data\day6_help\ready code\ -- test_protected related exmaples
+
+3. Complete Day 5 assignment
+
+3.1 Apply abstraction in emp based organization
+Hint : abstract method : computeNetSalary in Emp class.
+
+
+3.2 In TestOrganization  class , modify option 3
+case 3. 
+ Display information of all employees(toString),  including net salary , display bonus if it's manager or display hourly rate of a worker , using single for-each loop.
+
+Day 7
+Revise class work within first 20 minutes. & solve the assignment.
+
+Create Java application for fixed stack & growable stack based on Stack i/f , for storing emp details
+
+Steps
+
+1.1  Create Employee class -- id,name, constructor,toString
+1.2 Stack interface -- push & pop functionality for Emp refs. & declare STACK_SIZE as a constant. 
+1.3 Create implementation class of Stack i/f -- FixedStack (array based)
+1.4 Create implementation class of Stack i/f-- GrowableStack (array based)
+
+1.5
+From tester class (Must use dynamic method dispatch using interfaces)
+--- display Menu
+(Note : Must use 1 switch-case only.
+Once user selects either fixed or growable stack , user shouldn't be allowed to change the selection of the stack.
+)
+1 -- Choose Fixed Stack
+2 -- Choose Growable Stack
+Accept following options only after initial selection.
+3 -- Push data 
+4 --- Pop data & display
+5 -- Exit
+
+
